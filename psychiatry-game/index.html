@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Psychiatry Ward Simulator - Medical Student Training</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div id="game-container">
+        <header>
+            <h1>🏥 Psychiatry Ward Simulator</h1>
+            <div id="stats-bar">
+                <span id="day-display">Day: 1</span>
+                <span id="energy-display">Energy: 100%</span>
+                <span id="reputation-display">Reputation: 50</span>
+            </div>
+        </header>
+
+        <main id="game-area">
+            <!-- Welcome Screen -->
+            <div id="welcome-screen" class="screen active">
+                <h2>Welcome, Dr. Intern!</h2>
+                <p>You've just started your psychiatry rotation. Your goal is to diagnose and treat patients while managing your energy and building your reputation.</p>
+                <button id="start-btn" class="btn-primary">Start Your Rotation</button>
+            </div>
+
+            <!-- Main Ward Screen -->
+            <div id="ward-screen" class="screen">
+                <div id="patient-list">
+                    <h3>Patient Queue</h3>
+                    <div id="patients-container"></div>
+                </div>
+                <div id="actions-panel">
+                    <h3>Actions</h3>
+                    <button id="next-patient-btn" class="btn-action">See Next Patient</button>
+                    <button id="study-btn" class="btn-action">Study (Restore Energy)</button>
+                    <button id="end-day-btn" class="btn-action">End Day</button>
+                </div>
+            </div>
+
+            <!-- Consultation Screen -->
+            <div id="consultation-screen" class="screen">
+                <div id="patient-info">
+                    <h2 id="patient-name">Patient Name</h2>
+                    <p id="patient-age">Age: --</p>
+                    <p id="patient-history">History: --</p>
+                </div>
+                <div id="symptoms-list">
+                    <h3>Reported Symptoms</h3>
+                    <ul id="symptoms-container"></ul>
+                </div>
+                <div id="diagnosis-options">
+                    <h3>Select Diagnosis</h3>
+                    <select id="diagnosis-select"></select>
+                </div>
+                <div id="treatment-options">
+                    <h3>Select Treatment</h3>
+                    <select id="treatment-select"></select>
+                </div>
+                <button id="submit-diagnosis-btn" class="btn-primary">Submit Diagnosis & Treatment</button>
+                <button id="back-to-ward-btn" class="btn-secondary">Back to Ward</button>
+            </div>
+
+            <!-- Results Screen -->
+            <div id="results-screen" class="screen">
+                <h2>Consultation Results</h2>
+                <div id="result-feedback"></div>
+                <button id="continue-btn" class="btn-primary">Continue</button>
+            </div>
+
+            <!-- Game Over Screen -->
+            <div id="game-over-screen" class="screen">
+                <h2 id="game-over-title">Rotation Complete!</h2>
+                <div id="final-stats"></div>
+                <button id="restart-btn" class="btn-primary">Play Again</button>
+            </div>
+        </main>
+
+        <footer>
+            <p>Educational tool for medical students | Not for actual medical advice</p>
+        </footer>
+    </div>
+
+    <script src="js/patients.js" type="module"></script>
+    <script src="js/game.js" type="module"></script>
+</body>
+</html>
